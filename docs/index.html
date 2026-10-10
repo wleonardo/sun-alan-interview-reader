@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f3ed">
+  <meta name="description" content="孙宇晨与邵艾伦 4 小时长谈的时间线阅读器。49 个话题、682 段完整对话，点击展开原文，支持全文搜索、核心观点与视频定位。">
+  <title>孙宇晨 × 邵艾伦 · 访谈阅读器</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css?v=2">
+  <link rel="modulepreload" href="./transcript.js">
+  <script type="module" src="./app.js?v=2"></script>
+</head>
+<body>
+  <a class="skip-link" href="#topics">跳到话题列表</a>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="访谈阅读器首页"><span class="brand-icon" aria-hidden="true">↳</span>长谈阅读室<span class="edition">INTERVIEW / 001</span></a>
+    <div class="header-actions"><a class="subtle-link" href="https://www.youtube.com/watch?v=0Z-vhBvBmUY" target="_blank" rel="noopener noreferrer">原访谈 <span aria-hidden="true">↗</span></a><button class="button button-dark small" data-import>更换文字稿 <span aria-hidden="true">＋</span></button></div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="live-dot"></span> 一场长谈，逐题展开</p>
+        <h1 id="page-title">孙宇晨 <span class="times">×</span> 邵艾伦</h1>
+        <p class="hero-subtitle">从 AI 走进日常，到财富自由之后。</p>
+        <p class="hero-description">沿着对话发生的顺序，先读核心观点，再点开完整对话，看看他们究竟怎么说。</p>
+        <div class="hero-meta"><span>2026.10.09 发布</span><span>4 小时 22 分 28 秒</span><span><b id="topic-total">49</b> 个话题</span></div>
+      </div>
+      <aside class="reading-note">
+        <p class="note-label">这是一份可展开的阅读地图</p>
+        <p>先读摘要，<br>再走进你关心的对话。</p>
+        <div class="note-rule"></div>
+        <span>16 章 · 按原访谈时间排列</span>
+        <a href="#reading-start" class="start-link">开始阅读 <span aria-hidden="true">↓</span></a>
+      </aside>
+    </section>
+
+    <section class="transcript-banner" aria-label="文字稿状态">
+      <span class="document-icon" aria-hidden="true">≡</span>
+      <div><strong id="transcript-status">全文已内置 · 682 段对话已对应到 49 个话题</strong><p id="transcript-description">点击任意话题即可展开完整对话，无需导入。保留原稿说话人、时间戳、口语重复与存疑标记。</p></div>
+      <a class="button button-outline" href="./transcript.md" download="完整逐字稿.md">下载全文 <span aria-hidden="true">↓</span></a>
+    </section>
+
+    <div class="reader-layout" id="reading-start">
+      <aside class="chapter-sidebar">
+        <div class="sidebar-sticky">
+          <div class="sidebar-heading"><span class="eyebrow">CONTENTS</span><h2>按章节阅读</h2></div>
+          <nav id="chapter-nav" aria-label="访谈章节"></nav>
+          <div class="progress-card"><div><span>我的阅读进度</span><strong id="read-count">0 / 49</strong></div><progress id="read-progress" value="0" max="49" aria-label="已读话题进度"></progress><p>展开后可手动标记已读</p><button id="reset-progress" class="text-button">重置进度</button></div>
+          <button class="source-link text-button" id="open-sources">关于整理与来源 <span aria-hidden="true">↗</span></button>
+        </div>
+      </aside>
+
+      <section class="reader-main" aria-label="按时间排序的话题">
+        <div class="reader-controls">
+          <div class="search-wrap"><span class="search-icon" aria-hidden="true"></span><label class="visually-hidden" for="search">搜索问题、观点、例子或完整对话</label><input id="search" type="search" placeholder="搜索问题、观点或完整对话…" autocomplete="off" maxlength="120"><kbd aria-hidden="true">/</kbd></div>
+          <div class="filters" id="category-filters" role="group" aria-label="按主题筛选"></div>
+          <div class="list-toolbar"><p id="result-count" role="status" aria-live="polite">全部话题 · 按时间顺序</p><div><label class="unread-filter"><input type="checkbox" id="unread-only"> 只看未读</label><button class="text-button" id="toggle-all">全部展开</button></div></div>
+        </div>
+        <div id="topics"></div>
+        <div class="empty-state" id="empty-state" hidden><span aria-hidden="true">⌕</span><h3>没有找到匹配的话题</h3><p>试试更短的关键词，或移除筛选条件。</p><button class="button button-outline" id="reset-filters">查看全部话题</button></div>
+        <div class="end-note"><span class="end-symbol" aria-hidden="true">＊</span><p>对话会结束，问题可以继续。</p><span>标题与摘要为编辑转述 · 完整表达请结合原访谈</span><button class="text-button" id="footer-sources">查看来源与整理说明 ↗</button></div>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer"><span>长谈阅读室 / 001</span><a href="#top">回到开头 ↑</a><span>独立整理 · 非官方出品</span></footer>
+
+  <dialog id="import-dialog" aria-labelledby="import-title">
+    <div class="dialog-heading"><p class="eyebrow">YOUR TRANSCRIPT</p><button class="icon-button" data-close aria-label="关闭文字稿导入">×</button></div>
+    <h2 id="import-title">更换阅读用的文字稿</h2>
+    <p class="dialog-description">网页已内置你提供的完整逐字稿。也可以选择其他版本；替换稿仅在此浏览器内处理和保存，不改变网站内置的全文。</p>
+    <label class="file-picker" for="transcript-file"><span aria-hidden="true">＋</span><strong id="file-label">选择文字稿文件</strong><small>TXT / Markdown / SRT / VTT · 最大 8 MB</small><input id="transcript-file" type="file" accept=".txt,.md,.markdown,.srt,.vtt,text/plain,text/markdown,text/vtt"></label>
+    <div class="paste-heading"><label for="transcript-paste">或直接粘贴带时间戳的文字</label><button class="text-button" id="show-format" aria-expanded="false" aria-controls="format-help">查看格式示例</button></div>
+    <div class="format-help" id="format-help" hidden><p>使用相对原访谈的时间。以下仅为格式示例：</p><pre>[00:01:32] 邵艾伦：示例问题…
+[00:01:40] 孙宇晨：示例回答…</pre><p>也支持 SRT / VTT。没有说话人标签时，保留原文，不推断身份。</p></div>
+    <textarea id="transcript-paste" rows="5" placeholder="[00:01:32] 邵艾伦：…&#10;[00:01:40] 孙宇晨：…" aria-describedby="import-hint"></textarea>
+    <p class="field-hint" id="import-hint">用原视频的全程时间，不要把每章重新从零计时。单段跨越话题边界时，按起始时间归类。更换文件后，仍可随时恢复内置全文。</p>
+    <p id="import-message" role="status" aria-live="polite"></p>
+    <div class="dialog-actions"><button class="text-button danger" id="clear-transcript" hidden>恢复内置全文</button><button class="button button-dark" id="confirm-import">解析并使用 <span aria-hidden="true">→</span></button></div>
+    <p class="external-source">保留一份原始文件：<a href="./transcript.md" download="完整逐字稿.md">下载内置逐字稿 ↓</a></p>
+  </dialog>
+
+  <dialog id="sources-dialog" aria-labelledby="sources-title">
+    <div class="dialog-heading"><p class="eyebrow">EDITORIAL NOTES</p><button class="icon-button" data-close aria-label="关闭来源说明">×</button></div>
+    <h2 id="sources-title">关于这份阅读地图</h2>
+    <p class="dialog-description">访谈于 2026 年 10 月 9 日发布，总长 4:22:28。按 16 章与实际提问、追问、明显的话题转折整理；不同问题的回答可能有自然延续。</p>
+    <ul class="source-list">
+      <li><span>全文 / 本次提供的文件</span><a href="./transcript.md" download="完整逐字稿.md">完整逐字稿.md · 682 段对话 ↓</a></li>
+      <li><span>01 / 原始来源</span><a href="https://www.youtube.com/watch?v=0Z-vhBvBmUY" target="_blank" rel="noopener noreferrer">孙宇晨 × 邵艾伦完整视频 ↗</a></li>
+      <li><span>02 / 时间与内容参照</span><a href="https://github.com/LeoLee0812/sunyuchen-alan-interview" target="_blank" rel="noopener noreferrer">LeoLee0812 · 16 章公开转写 ↗</a></li>
+      <li><span>03 / 辅助参照</span><a href="https://github.com/chalmery/sunyuchen-ai-interview" target="_blank" rel="noopener noreferrer">chalmery · 访谈文字整理 ↗</a></li>
+    </ul>
+    <p class="source-explanation">问题标题、核心内容与例子均为编辑转述，不是逐字引语。时间来自公开转写，可能有小幅误差。健康、投资及个人经历属于受访者陈述，未逐项事实核验。</p>
+    <p class="source-explanation">默认完整对话来自你在本次会话上传的《完整逐字稿.md》，共 682 段，已全部按起始时间归入 49 个话题。说话人、原话与存疑标记均保留，校订说明单独显示。下载文件与上传文件完全一致；转写准确性仍应结合原视频核对。</p>
+    <p class="source-explanation">全文随网页保存，无需重复导入。另行更换的文字稿和已读进度保存在当前浏览器，不跨设备同步。</p>
+    <button class="button button-outline" data-close>继续阅读</button>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <noscript><p class="noscript">请启用 JavaScript 以浏览交互式话题目录。也可以直接<a href="./transcript.md" download="完整逐字稿.md">下载完整逐字稿</a>。</p></noscript>
+</body>
+</html>
